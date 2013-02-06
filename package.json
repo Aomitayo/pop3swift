@@ -14,8 +14,8 @@
   "license": "MIT",
   "readmeFilename": "README.md",
   "gitHead": "af50865813bced47779ebce559d408cb4211c8c3",
-  "dependencies":{
-    "iconv": "*",
+  "dependencies": {
+    "iconv": "~1.2.4",
     "node-markdown": "*"
   }
 }
