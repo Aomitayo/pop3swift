@@ -1,16 +1,16 @@
 {
-  "name": "pop3-n3",
+  "name": "pop3swift",
   "version": "0.1.2",
-  "description": "POP3 server for node.js",
-  "main": "n3.js",
+  "description": "POP3 utilities for node.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/andris9/n3.git"
+    "url": "git://github.com/Aomitayo/pop3swift.git"
   },
-  "author": "Andris Reinman",
+  "author": "Adedayo Omitayo",
   "license": "MIT",
   "readmeFilename": "README.md",
   "gitHead": "af50865813bced47779ebce559d408cb4211c8c3",
