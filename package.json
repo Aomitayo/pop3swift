@@ -1,6 +1,6 @@
 {
   "name": "pop3swift",
-  "version": "0.1.2",
+  "version": "0.1.0",
   "description": "POP3 utilities for node.js",
   "main": "index.js",
   "scripts": {
@@ -14,8 +14,13 @@
   "license": "MIT",
   "readmeFilename": "README.md",
   "gitHead": "af50865813bced47779ebce559d408cb4211c8c3",
-  "dependencies":{
-    "iconv": "*",
-    "node-markdown": "*"
+  "dependencies": {
+    "debug": "~0.7.2"
+  },
+  "devDependencies": {
+    "chai": "~1.5.0",
+    "mocha": "~1.8.1",
+    "poplib": "~0.1.4",
+    "mailcomposer": "~0.1.29"
   }
 }
