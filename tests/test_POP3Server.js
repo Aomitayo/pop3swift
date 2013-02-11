@@ -3,7 +3,7 @@ var expect = require('chai').expect,
 	POP3Client = require('poplib'),
 	POP3Server = require('../').Server,
 	PORT = 5050;
-
+	
 describe('POP3 server', function(){
 	var pop3Server;
 
