@@ -11,8 +11,9 @@ describe('POP3 server', function(){
 		var messageStore = {}, authHandler = {};
 		pop3Server = new POP3Server({
 			simpleAuth: function(username, password, callback){
-				if( username == 'jdoe' && password == 'correct_password'){
-					return callback(null, 'jdoe', {username:'jdoe'});
+
+				if(/(^jdoe$)|(^jdoe2$)/.test(username) && password == 'correct_password'){
+					return callback(null, username, {username:username});
 				}
 				else{
 					return callback(new Error('Invalid Username or password'));
@@ -134,6 +135,25 @@ describe('POP3 server', function(){
 			client2.on('connect', function(){ client2.login('jdoe', 'correct_password');});
 			client2.on('login', function(status){
 				expect(status).to.be.false;
+				client2.quit();
+			});
+			client2.on('quit', function(){client1.quit();});
+			client2.on('error', done);
+		});
+		client1.on('quit', function(){done();});
+		client1.on('error', done);
+	});
+
+	it('Should Accept multiple connections from different users', function(done){
+		var client1 = new POP3Client(PORT, 'localhost', false);
+		var client2;
+		client1.on('connect', function(){ client1.login('jdoe', 'correct_password');});
+		client1.on('login', function(status){
+			expect(status).to.be.true;
+			var client2 = new POP3Client(PORT, 'localhost', false);
+			client2.on('connect', function(){ client2.login('jdoe2', 'correct_password');});
+			client2.on('login', function(status){
+				expect(status).to.be.true;
 				client2.quit();
 			});
 			client2.on('quit', function(){client1.quit();});

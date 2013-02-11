@@ -1,6 +1,6 @@
 {
   "name": "pop3swift",
-  "version": "0.1.0-rc3",
+  "version": "0.1.1",
   "description": "POP3 utilities for node.js. Current;y provides only a POP3 Server",
   "keywords": ["POP3", "SERVER"],
   "homepage": "git://github.com/Aomitayo/pop3swift.git",
