@@ -1,14 +1,20 @@
 {
   "name": "pop3swift",
-  "version": "0.1.0",
-  "description": "POP3 utilities for node.js",
+  "version": "0.1.0-rc2",
+  "description": "POP3 utilities for node.js. Current;y provides only a POP3 Server",
+  "keywords": ["POP3", "SERVER"],
+  "homepage": "git://github.com/Aomitayo/pop3swift.git",
+
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha -R spec --ignore-leaks tests/"
   },
   "repository": {
     "type": "git",
     "url": "git://github.com/Aomitayo/pop3swift.git"
+  },
+  "bugs": {
+    "url" : "http://github.com/Aomitayo/pop3swift/issues"
   },
   "author": "Adedayo Omitayo",
   "license": "MIT",

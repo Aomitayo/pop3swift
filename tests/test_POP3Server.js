@@ -1,7 +1,7 @@
 var expect = require('chai').expect,
 	net = require('net'),
 	POP3Client = require('poplib'),
-	POP3Server = require('../lib/POP3Server'),
+	POP3Server = require('../').Server,
 	PORT = 5050;
 
 describe('POP3 server', function(){
@@ -238,7 +238,6 @@ describe('POP3 server', function(){
 			expect(msgNumber).to.equal(1);
 			client.once('stat', function(status, data, rawData){
 				expect(status).to.be.true;
-				console.log(data.count);
 				expect(data.count).to.equal('2');
 				client.rset();
 			});
@@ -248,7 +247,6 @@ describe('POP3 server', function(){
 			expect(status).to.be.true;
 			client.once('stat', function(status, data, rawData){
 				expect(status).to.be.true;
-				console.log(data.count);
 				expect(data.count).to.equal('3');
 				client.quit();
 			});
