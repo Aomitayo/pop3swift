@@ -276,6 +276,19 @@ describe('POP3 server', function(){
 		client.on('error', done);
 	});
 
+	it('Should error on invalid non-command strings', function(done){
+		var responses = [/^\+OK/, /^\-ERR/].reverse();
+		var client = net.connect(PORT);
+		client.on('error', function(err){
+			done(err);
+		});
+		client.on('data', function(chunk){
+			expect(chunk.toString('ascii')).to.match(responses.pop());
+			if(responses.length == 0) return done();
+			else client.write("9\r\n");
+		});
+	});
+
 	it('Should have persistent Deletions', function(done){
 		var client1 = new POP3Client(PORT, 'localhost', false);
 		var client2;
